@@ -18,9 +18,16 @@ namespace Demo_OData
 
         private static bool Initialized = false;
         public DbSet<Product> Products { get; set; }
+        public DbSet<Factory> Factories { get; set; }
 
         private void SeedData()
         {
+            Factories.Add(new Factory()
+            {
+                Id = 1,
+                Name = "Gloria SAC",
+                YearsInMarket = 30
+            });
             Products.Add(new Product()
             {
                 Id = Guid.NewGuid().ToString(),
@@ -31,7 +38,8 @@ namespace Demo_OData
                 MeasureUnit = "unidad",
                 Price = 3.5f,
                 Stock = 10,
-                Weight = 1
+                Weight = 1,
+                FactoryId = 1
             });
 
             Products.Add(new Product()

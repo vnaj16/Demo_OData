@@ -37,7 +37,7 @@ namespace Demo_OData
             });
 
             services.AddControllers().AddOData(opt => { //More info: https://www.c-sharpcorner.com/article/odata-in-net-5/
-                opt.Select().Filter();
+                opt.Select().Expand().Filter();
                 opt.AddRouteComponents("odata", GetEdmModel());
             });
 
